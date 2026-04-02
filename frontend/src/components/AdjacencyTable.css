@@ -1,0 +1,131 @@
+/* AdjacencyTable.css */
+
+.adj-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  animation: fadeIn 0.35s ease;
+}
+
+.adj-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.125rem;
+  cursor: pointer;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.adj-header:hover {
+  background: var(--bg-card-hover);
+}
+
+.card-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.adj-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+
+.adj-toggle:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.adj-body {
+  padding: 1rem 1.125rem;
+  animation: fadeIn 0.25s ease;
+}
+
+.adj-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.875rem;
+}
+
+.adj-table-wrap {
+  overflow-x: auto;
+}
+
+.adj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.adj-table th {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.adj-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.adj-table tr:last-child td {
+  border-bottom: none;
+}
+
+.adj-table tr:hover td {
+  background: var(--bg-secondary);
+}
+
+.adj-row--empty td {
+  opacity: 0.5;
+}
+
+.adj-node {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  min-width: 130px;
+}
+
+.adj-neighbors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.adj-chip {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-secondary);
+}
+
+.adj-none {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.8rem;
+}

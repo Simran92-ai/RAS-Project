@@ -1,0 +1,225 @@
+/* GraphCanvas.css */
+
+.graph-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+  animation: fadeIn 0.4s ease;
+}
+
+.graph-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.125rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.graph-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.card-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+/* ── Status badge ────────────────────────────────────── */
+.graph-status-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  animation: scaleIn 0.3s ease;
+}
+
+.badge--deadlock {
+  background: rgba(252, 92, 92, 0.15);
+  color: var(--accent-red);
+  border: 1px solid rgba(252, 92, 92, 0.3);
+}
+
+.badge--safe {
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--accent-green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* ── Graph controls ──────────────────────────────────── */
+.graph-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gc-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gc-btn:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.gc-btn--export {
+  background: rgba(100, 117, 255, 0.1);
+  border-color: rgba(100, 117, 255, 0.3);
+  color: var(--accent-blue);
+}
+
+.gc-btn--export:hover {
+  background: rgba(100, 117, 255, 0.2);
+}
+
+/* ── Legend ──────────────────────────────────────────── */
+.graph-legend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.125rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.legend-shape {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.legend-circle {
+  border-radius: 50%;
+  background: rgba(100, 117, 255, 0.2);
+  border: 2px solid var(--node-process);
+}
+
+.legend-square {
+  border-radius: 2px;
+  background: rgba(244, 144, 88, 0.2);
+  border: 2px solid var(--node-resource);
+}
+
+.legend-deadlock {
+  border-radius: 50%;
+  background: rgba(252, 92, 92, 0.2);
+  border: 2px solid var(--accent-red);
+}
+
+.legend-line {
+  width: 20px;
+  height: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.legend-line--req {
+  background: var(--node-process);
+}
+
+.legend-line--alloc {
+  background: transparent;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--node-process) 0px,
+    var(--node-process) 5px,
+    transparent 5px,
+    transparent 8px
+  );
+}
+
+/* ── Canvas wrapper ──────────────────────────────────── */
+.graph-canvas-wrap {
+  position: relative;
+  height: 480px;
+  background: var(--bg-primary);
+}
+
+.vis-container {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Overlay (loading) ───────────────────────────────── */
+.graph-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--bg-primary);
+  z-index: 10;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.graph-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ── Empty state ─────────────────────────────────────── */
+.graph-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem;
+}
+
+.graph-empty-icon {
+  font-size: 3.5rem;
+  opacity: 0.2;
+}
+
+.graph-empty p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* ── vis-network internal button bar fix ─────────────── */
+.vis-navigation .vis-button {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+}

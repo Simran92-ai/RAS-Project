@@ -1,0 +1,96 @@
+/* EducationSection.css */
+
+.edu-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.edu-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.card-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.edu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Each collapsible item ────────────────────────────── */
+.edu-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.edu-item:last-child {
+  border-bottom: none;
+}
+
+.edu-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.edu-toggle:hover {
+  background: var(--bg-secondary);
+}
+
+.edu-icon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.edu-title {
+  flex: 1;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.edu-chevron {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Expanded content ────────────────────────────────── */
+.edu-item--open .edu-toggle {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.edu-content {
+  animation: fadeIn 0.25s ease;
+  background: var(--bg-primary);
+}
+
+.edu-text {
+  padding: 0.875rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.79rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
