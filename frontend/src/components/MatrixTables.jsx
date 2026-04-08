@@ -1,5 +1,3 @@
-// components/MatrixTables.js — NEW
-// Shows Allocation, Need, Max matrices + Available vector + Safe sequence table
 import React, { useState } from 'react';
 import './MatrixTables.css';
 

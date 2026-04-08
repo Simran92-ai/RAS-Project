@@ -1,4 +1,3 @@
-// components/EducationSection.js
 import React, { useState } from 'react';
 import './EducationSection.css';
 

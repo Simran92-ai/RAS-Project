@@ -1,4 +1,3 @@
-// components/AdjacencyTable.js
 import React, { useState } from 'react';
 import './AdjacencyTable.css';
 
